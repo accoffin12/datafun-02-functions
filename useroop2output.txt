@@ -1,0 +1,23 @@
+PS C:\Users\Tower\Documents\Data Analytics Sp 2023\Repositories\Reference Repo Sp 2023\datafun-02-functions>  c:; cd 'c:\Users\Tower\Documents\Data Analytics Sp 2023\Repositories\Reference Repo Sp 2023\datafun-02-functions'; & 'C:\Users\Tower\anaconda3\python.exe' 'c:\Users\Tower\.vscode\extensions\ms-python.python-2022.20.2\pythonFiles\lib\python\debugpy\adapter/../..\debugpy\launcher' '51621' '--' 'c:\Users\Tower\Documents\Data Analytics Sp 2023\Repositories\Reference Repo Sp 2023\datafun-02-functions\useroop2.py' 
+Enter total wins for team: 12
+Enter total wins for team: 15
+Enter total wins for team: 18
+Enter total wins for team: 20
+Enter total wins for team: 22
+
+Welcome, I'm with the FIA.
+I'm Toto.
+I'm a manager.
+We currently have 125
+We currently have higher wins than average!
+I'm at the track today, maybe tomorrow.
+My team got a total annual bonus of $400.20!
+
+
+Welcome, I'm with the FIA.
+I'm Rex.
+I'm a stratagist.
+We currently have 243
+We currently have higher wins than average!
+There's no race today, I can help.
+My team got a total annual bonus of $759.00!

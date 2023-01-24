@@ -30,63 +30,65 @@ class PyBuddy:
                 self.available = available
         
     
-def __str__(self):
-        """Built-in method"""
-        s0 = f"I'm {self.name}.\n"
-        s1 = f"I'm a {self.positions}.\n"
-        s2 = f"We currently have {self.wins}"
-        sm1 = f"We currently have {self.compare_wins()} wins than average!\n"
-        s3 = f"I've been with the team {self.get_string_age()}.\n"
-        sm2 = f"My team got a total annual bonus of ${self.annual_bonus():.2f}!\n"
+        def __str__(self):
+                """Built-in method"""
+                s0 = f"I'm {self.name}.\n"
+                s1 = f"I'm a {self.positions.name}.\n"
+                s2 = f"We currently have {self.wins}\n"
+                sm1 = f"We currently have {self.compare_wins()} wins than average!\n"
+                s3 = f"I've been with the team {self.get_age_string()}.\n"
+                sm2 = f"My team got a total annual bonus of ${self.annual_bonus():.2f}!\n"
 
-        if self.available:
-                s3 = "There's no race today, I can help.\n"
-        else:
-                s3 = "I'm at the track today, maybe tomorrow.\n"
-        
-def get_age_string(self):
-        start= self.founded
-        end = datetime.datetime.now()
-        duration = end - start
-        ageString = str(duration)
-        return ageString
+                if self.available:
+                        s3 = "There's no race today, I can help.\n"
+                else:
+                        s3 = "I'm at the track today, maybe tomorrow.\n"
 
-#Created to compare wins to age, allowing for calculation of team bonus.
-# List created from user input, uses stats.mean.
-def compare_wins(self): 
-        """Compare wins to calculate average."""
-        win_avg = stats.mean(win_list) 
+                return s0 + s1 + s2 + sm1 + s3 + sm2
+                
+        def get_age_string(self):
+                start= self.founded
+                end = datetime.datetime.now()
+                duration = end.year - start
+                ageString = str(duration)
+                return ageString
 
-        if self.wins < win_avg:
-                return "lower"
-        if self.wins > win_avg:
-                return "higher"
-        if self.win == win_avg:
-                return "average"
+        #Created to compare wins to age, allowing for calculation of team bonus.
+        # List created from user input, uses stats.mean.
+        def compare_wins(self): 
+                """Compare wins to calculate average."""
+                win_avg = stats.mean(win_list) 
 
-def annual_bonus(self):
-        if 0 < self.team_age < 15:
-                team_bonus = 1.3
-        elif 15 < self.team_age <35:
-                team_bonus = 15.5
-        elif 35 < self.team_age <55:
-                team_bonus = 25.2
-        elif self.team_age > 75:
-                team_bonus = 30
-        
-        win_bonus = ((self.wins / 2) * 6)
-        
-        annual_bonus = win_bonus + team_bonus
-        
-        return annual_bonus
+                if self.wins < win_avg:
+                        return "lower"
+                if self.wins > win_avg:
+                        return "higher"
+                if self.win == win_avg:
+                        return "average"
 
-def display_welcome(self):
-        print()
-        print("Welcome, I'm with the FIA.")
-        print(self.___str__())
+        def annual_bonus(self):
+                if 0 < self.team_age < 15:
+                        team_bonus = 1.3
+                elif 15 < self.team_age <35:
+                        team_bonus = 15.5
+                elif 35 < self.team_age <55:
+                        team_bonus = 25.2
+                elif self.team_age > 75:
+                        team_bonus = 30
+                
+                win_bonus = ((self.wins / 2) * 6)
+                
+                annual_bonus = win_bonus + team_bonus
+                
+                return annual_bonus
+
+        def display_welcome(self):
+                print()
+                print("Welcome, I'm with the FIA.")
+                print(self.__str__())
 
 """Calculating team bonus for teams based off years as a member of FIA."""
-# --------------------------------------------------------------------
+# -----------------------------------1---------------------------------
 #Call Functions and Exicute Code
 
 #Asking for five years of race wins.
@@ -94,7 +96,7 @@ win_list = []
 list_lenght = 5
 
 for test in range (list_lenght):
-        wins = int(input('Enter total wins for team: '))
+        win_list.append(int(input('Enter total wins for team: ')))
 
 if __name__ == "__main__":
 
@@ -122,4 +124,4 @@ Rex = PyBuddy(
         f"Ferrari",
         True,
         )
-
+Rex.display_welcome()
