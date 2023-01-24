@@ -39,7 +39,7 @@ def get_circle_area(radius):
     radius -- the radius of the circle
 
     This could fail - for example, what is the 
-    area of a circle qith a negative radius?
+    area of a circle with a negative radius?
     Or a circle with an infinite radius?
 
     """
@@ -52,7 +52,15 @@ def get_circle_area(radius):
     except Exception as ex:
         print(f"Error: {ex}")
         return None
-
+    if radius <= 0:
+        print("Radius must be positive.")
+    else:
+        try:
+            area = 2* math.pi * radius
+            return area
+        except Exception as ex:
+            print(f" Error: {ex}")
+            return None
 
 def print_circle_areas(lst):
     """

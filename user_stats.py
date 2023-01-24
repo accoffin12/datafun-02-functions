@@ -16,7 +16,9 @@ Uses only Python Standard Library module:
 
 """
 
+import stat
 import statistics
+
 
 # define a variable with some univariant data 
 # (one varabile, many readings)
@@ -78,3 +80,38 @@ scores = [
 # y is dependent on x (e.g. temperature vs hour of day)
 x_times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+
+#Calculate measures of central tendancy for Agility Scores
+score_mode = statistics.mode(scores)
+score_mean = statistics.mean(scores)
+score_median = statistics.median(scores)
+score_variance = statistics.pvariance(scores)
+score_st_dev = statistics.pstdev(scores)
+
+print(f"The mode of all the scores was, {score_mode}.")
+print(f"The mean score for the test was, {score_mean}.")
+print(f"The median score for the test was, {score_median}.")
+print(f"The variance of the test secores was, {round(score_variance, 2)}.")
+print(f"The standard deviation of the test scores was {round(score_st_dev, 2)}.")
+print()
+
+#Calculate the slope and intercept for regression line.
+y_future = 13
+
+slope, intercept = stat.linear_regression(x_times, y_temps)
+print(f"The linear regression for the data has a slope of {round(slope,2)} and an intercept of {round(intercept, 2)}")
+
+x_future = 13
+y_future = slope * x_future + intercept
+print(f"Based on the temperatures over the past 12 hours, the temp will be {round(y_future,0)} degrees in a few hours.")
+
+
+
+
+
+
+
+    
+
+
+

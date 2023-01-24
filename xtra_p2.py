@@ -1,19 +1,26 @@
 """
 Optional bonus. See course site for details.
-
-
-
->>> add_two(1,2)
-3
+"""
+import math
+"""add_two(1,2)"""
+def add_two(first, second):
+    f"(Return the sum of any two numbers)"
+    sum = first + second
+    return sum
 
 >>> add_two("hello"," world")
 'hello world'
 
 >>> add_triangle_list( [3,4,5] )
-12
+def add_trangle_list(first, second, third)
+f"(return the sum of three numbers"
+total = sum(add_triangle_list)
+return total
 
 >>> add_any(1,1,1,1,1,1,1,1)
-8
+def add_any(self):
+    total = sum(add_any)
+    return total
 
 >>> add_any_with_keywords(a=1,b=2)
 3
